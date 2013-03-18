@@ -1,0 +1,27 @@
+<?php
+$this->breadcrumbs=array(
+	'Temas',
+);
+
+	$this->widget('bootstrap.widgets.TbMenu', array(
+    'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
+    'stacked'=>false, // whether this is a stacked menu
+    'dropup'=>'false',
+    'items'=>array(
+			array('label'=>'Crear Temas','url'=>array('create')),
+			array('label'=>'Gestión de Temas','url'=>array('admin')),
+    ),
+));
+
+/*$this->menu=array(
+	array('label'=>'Create Temas','url'=>array('create')),
+	array('label'=>'Manage Temas','url'=>array('admin')),
+);*/
+?>
+
+<h1>Temas</h1>
+
+<?php $this->widget('bootstrap.widgets.TbListView',array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>
